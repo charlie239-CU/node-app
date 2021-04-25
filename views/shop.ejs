@@ -1,0 +1,29 @@
+<%- include('include/head.ejs') %> 
+
+<body>
+    <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+    <%- include('include/navigation.ejs') %> 
+    <div class="container">
+        <div class="row">
+            <% if(products.length>0){ %>
+            <% for(let product of products){ %>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="card">
+                    <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/7199FL6H9JL.jpg"
+                        style="max-height:100px" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=product.title%></h5>
+                        <p class="lead">$18.9</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Cart</a>
+                    </div>
+                </div>
+            </div>
+                <%} } else {%>
+                <h4>empty cart</h3>
+                <%}%>
+            
+        </div>
+    </div>
+    <%- include('include/end.ejs') %> 
